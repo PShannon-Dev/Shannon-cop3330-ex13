@@ -25,7 +25,7 @@ public class Investment {
         this.rate = rate;
     }
 
-    public float getYears() {
+    public int getYears() {
         return years;
     }
 
@@ -42,13 +42,18 @@ public class Investment {
     }
 
     public float getEndWorth() {
-        return calculateWorth(principal,years,rate,perYear);
+        return endWorth;
     }
+    public void setEndWorth(float endWorth)
+    {
+        this.endWorth = endWorth;
+    }
+
 
     public float calculateWorth(float principal, int years, float rate, int perYear)
     {
         DecimalFormat df = new DecimalFormat("$0.00");
-        double future = (principal * (Math.pow((1 + (rate/ perYear)),(perYear * years))));
+        double future = (principal * (Math.pow((1 + ((rate/100)/ perYear)),(perYear * years))));
         df.format(future); //format decimal places
         return Float.valueOf((float)future);
     }

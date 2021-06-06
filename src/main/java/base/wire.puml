@@ -3,7 +3,7 @@
 class App
 {
 [] set and get for all instance variables
-output()
++ output()
 }
 App <|--Investment
 
