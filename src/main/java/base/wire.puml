@@ -1,0 +1,20 @@
+@startuml
+
+class App
+{
+[] set and get for all instance variables
+output()
+}
+App <|--Investment
+
+class Investment
+{
++principal
++rate
++years
++perYear
++endWorth
++calculate_end_Worth()
+}
+
+@enduml
